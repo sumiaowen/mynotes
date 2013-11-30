@@ -1,7 +1,10 @@
-可以按照以下步骤来部署和运行程序:
-1.请确保机器@已经安装了Yaf框架, 并且已经加载入PHP;
-2.把sample目录Copy到Webserver的DocumentRoot目录下;
-3.需要在php.ini里面启用如下配置，生产的代码才能正确运行：
-	yaf.environ="product"
-4.重启Webserver;
-5.访问http://yourhost/sample/,出现Hellow Word!, 表示运行成功,否则请查看php错误日志;
+//构建一个YAF基础框架
+
+1、类库目录：多个应用共用
+
+2、基础类库：
+    1）PDO mysql操作、php mongodb 操作
+
+    2）缓存：memcache、文件缓存、redis
+
+    3）cookie、session
