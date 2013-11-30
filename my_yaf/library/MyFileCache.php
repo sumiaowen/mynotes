@@ -9,7 +9,7 @@
  * To change this template use File | Settings | File Templates.
  */
 include 'ThirdPart/Lite.php';
-class FileCache
+class MyFileCache
 {
 	public $_cache = '';
 	public $path = '';

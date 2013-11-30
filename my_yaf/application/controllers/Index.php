@@ -30,10 +30,15 @@ class IndexController extends Yaf_Controller_Abstract {
 		$result = $pdo->query($sql);
 		$result = serialize($result);
 
-		$option = array();
-		$option['cacheDir'] = Yaf_Registry::get('config')->cache->file->path;
-		$fileCache = new FileCache($option);
-		$fileCache->save_cache($result,'test');
+		$myMemcache = new MyMemcache();
+		if($myMemcache->save_data('test',$result))
+		{
+			echo 'OK';
+		}
+		else
+		{
+			echo 'ng';
+		}
 
 
 		echo '<br>';
