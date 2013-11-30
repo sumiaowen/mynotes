@@ -13,6 +13,9 @@ class Bootstrap extends Yaf_Bootstrap_Abstract{
 		//把配置保存起来
 		$arrConfig = Yaf_Application::app()->getConfig();
 		Yaf_Registry::set('config', $arrConfig);
+
+		define('BASE_URL',Yaf_Registry::get('config')->application->baseUrl);
+		define('RESOURCE_URL',Yaf_Registry::get('config')->application->resourceUrl);
 	}
 
 	public function _initPlugin(Yaf_Dispatcher $dispatcher) {
