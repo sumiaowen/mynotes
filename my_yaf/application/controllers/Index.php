@@ -28,18 +28,13 @@ class IndexController extends Yaf_Controller_Abstract {
 		$sql = "select * from admin_520jixie order by id desc limit 10";
 
 		$result = $pdo->query($sql);
-		$result = serialize($result);
 
-		$myMemcache = new MyMemcache();
-		if($myMemcache->save_data('test',$result))
-		{
-			echo 'OK';
-		}
-		else
-		{
-			echo 'ng';
-		}
+		$fileName = Yaf_Registry::get('config')->cache->file->path.'test.csv';
+		$csv = new MyCsv($fileName ,'r');
 
+		echo '<pre>';
+		print_r($csv->import());
+		echo '</pre>';
 
 		echo '<br>';
 		//4. render by Yaf, 如果这里返回FALSE, Yaf将不会调用自动视图引擎Render模板
