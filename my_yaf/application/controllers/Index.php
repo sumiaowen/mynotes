@@ -28,10 +28,13 @@ class IndexController extends Yaf_Controller_Abstract {
 		$sql = "select * from admin_520jixie order by id desc limit 10";
 
 		$result = $pdo->query($sql);
+		$result = serialize($result);
 
-		echo '<pre>';
-		print_r($get);
-		echo '</pre>';
+		$option = array();
+		$option['cacheDir'] = Yaf_Registry::get('config')->cache->file->path;
+		$fileCache = new FileCache($option);
+		$fileCache->save_cache($result,'test');
+
 
 		echo '<br>';
 		//4. render by Yaf, 如果这里返回FALSE, Yaf将不会调用自动视图引擎Render模板

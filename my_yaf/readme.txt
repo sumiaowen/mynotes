@@ -7,7 +7,7 @@
 
 2、基础类库：
     1）php mongodb 操作
-    2）缓存：memcache、文件缓存、redis
+    2）缓存：memcache
     3）cookie、session
     4）数据过滤、安全
     5）文件上传
