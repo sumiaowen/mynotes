@@ -3,12 +3,10 @@
 需要考虑的：
 1、基础配置
     1）配置文件：测试、生产
-    2）类库目录
-    3）主域名、资源域名
-    4）基础常量
+    2）路由配置
 
 2、基础类库：
-    1）PDO mysql操作、php mongodb 操作
+    1）php mongodb 操作
     2）缓存：memcache、文件缓存、redis
     3）cookie、session
     4）数据过滤、安全

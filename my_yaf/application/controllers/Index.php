@@ -24,9 +24,16 @@ class IndexController extends Yaf_Controller_Abstract {
 		$this->getView()->assign("name", $name);
 
 
-		echo BASE_URL.'<br>';
-		echo RESOURCE_URL.'<br>';
+		$pdo = MyPdo::get_instance('default');
+		$sql = "select * from admin_520jixie order by id desc limit 10";
 
+		$result = $pdo->query($sql);
+
+		echo '<pre>';
+		print_r($get);
+		echo '</pre>';
+
+		echo '<br>';
 		//4. render by Yaf, 如果这里返回FALSE, Yaf将不会调用自动视图引擎Render模板
         return TRUE;
 
