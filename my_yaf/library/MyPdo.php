@@ -1,6 +1,6 @@
 <?php
 /**
- * 简易 PDO mysql 操作类(单例模式)
+ * 简易 PDO mysql 操作类
  * Created by PhpStorm.
  * User: sumiaowen
  * Contact: http://www.php230.com/
