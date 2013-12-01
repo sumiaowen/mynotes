@@ -14,27 +14,14 @@ class MyPdo
 	private $username = null;
 	private $password = null;
 	private $conn = null;
-	private static $_instance = null;
 
-	private function __construct($database)
+	public function __construct($database = 'default')
 	{
 		$this->dns      = Yaf_Registry::get('config')->db->$database->dns;
 		$this->username = Yaf_Registry::get('config')->db->$database->username;
 		$this->password = Yaf_Registry::get('config')->db->$database->password;
 
 		$this->_connect();
-	}
-
-	private function __clone() { }
-
-	public function get_instance($database = 'default')
-	{
-		if(!(self::$_instance instanceof self))
-		{
-			self::$_instance = new self($database);
-		}
-
-		return self::$_instance;
 	}
 
 	private function _connect()
