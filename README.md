@@ -10,3 +10,7 @@ mynotes
 4、snoopy使用示例：https://github.com/sumiaowen/mynotes/tree/master/snoopy-use-examples
 
 5、表单验证：https://github.com/sumiaowen/mynotes/tree/master/validate-form-data
+
+6、YAF框架：https://github.com/sumiaowen/mynotes/tree/master/my_yaf
+
+7、模拟discuz发帖：https://github.com/sumiaowen/mynotes/tree/master/simulate-discuz-post
