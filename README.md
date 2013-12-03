@@ -17,4 +17,4 @@ mynotes
 
 8、中文字符串截取：https://github.com/sumiaowen/mynotes/tree/master/chinese_string_interception
 
-9、mysql特殊字符转义：
+9、mysql特殊字符转义：https://github.com/sumiaowen/mynotes/tree/master/mysql_real_escape_string
