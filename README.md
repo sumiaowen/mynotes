@@ -14,3 +14,7 @@ mynotes
 6、YAF框架：https://github.com/sumiaowen/mynotes/tree/master/my_yaf
 
 7、模拟discuz发帖：https://github.com/sumiaowen/mynotes/tree/master/simulate-discuz-post
+
+8、中文字符串截取：https://github.com/sumiaowen/mynotes/tree/master/chinese_string_interception
+
+9、mysql特殊字符转义：https://github.com/sumiaowen/mynotes/tree/master/mysql_real_escape_string
