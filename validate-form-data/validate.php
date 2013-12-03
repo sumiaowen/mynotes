@@ -33,6 +33,7 @@ function cutOutString($string, $length, $postfix='') {
 
 ######################################################
 //4、数据转义
+参考：https://github.com/sumiaowen/mynotes/tree/master/mysql_real_escape_string
 
 ######################################################
 //5、特殊字符替换
