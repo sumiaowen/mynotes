@@ -18,3 +18,7 @@ mynotes
 8、中文字符串截取：https://github.com/sumiaowen/mynotes/tree/master/chinese_string_interception
 
 9、mysql特殊字符转义：https://github.com/sumiaowen/mynotes/tree/master/mysql_real_escape_string
+
+10、长微博生成：https://github.com/sumiaowen/mynotes/tree/master/html_to_image
+
+11、PHP小技巧：https://github.com/sumiaowen/mynotes/tree/master/php_tips
