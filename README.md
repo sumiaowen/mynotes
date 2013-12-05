@@ -1,4 +1,4 @@
-mynotes
+Mynotes
 =======
 
 1、PDO mysql操作类：https://github.com/sumiaowen/mynotes/tree/master/pdo_mysql_class
