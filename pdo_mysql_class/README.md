@@ -1,4 +1,4 @@
-pdo_mysql_class
+pdo_mysql_class(更新中...)
 ===============
 
 mysql pdo operation
