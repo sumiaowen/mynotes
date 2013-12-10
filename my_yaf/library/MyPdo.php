@@ -1,6 +1,6 @@
 <?php
 /**
- * 简易 PDO mysql 操作类
+ * 简单 PDO mysql 操作类
  * Created by PhpStorm.
  * User: sumiaowen
  * Contact: http://www.php230.com/
@@ -72,5 +72,12 @@ class MyPdo
 		return $stmt->rowCount();
 	}
 
-
+	/**
+	 * 返回最后插入行的ID
+	 * @return mixed
+	 */
+	public function getLastInsertId()
+	{
+		return $this->conn->lastInsertId();
+	}
 }
