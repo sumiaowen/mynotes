@@ -38,7 +38,7 @@ class MyPdo
 	}
 
 	/**
-	 * 查询一条SQL语句
+	 * 查询
 	 * @param string $sql
 	 * @param array  $parameters 需要绑定的参数
 	 * @param int    $option
@@ -59,12 +59,12 @@ class MyPdo
 	}
 
 	/**
-	 * 插入一条数据
+	 * 增、删、改
 	 * @param string $sql
 	 * @param array  $parameters
-	 * @return int  1 or 0 返回影响行数
+	 * @return int  返回影响行数
 	 */
-	public function insert($sql, $parameters = array())
+	public function execution($sql, $parameters = array())
 	{
 		$stmt = $this->conn->prepare($sql);
 		$stmt->execute($parameters);
@@ -72,31 +72,5 @@ class MyPdo
 		return $stmt->rowCount();
 	}
 
-	/**
-	 * 更新一条数据
-	 * @param string $sql
-	 * @param array  $parameters
-	 * @return int  1 or 0 返回影响行数
-	 */
-	public function update($sql, $parameters = array())
-	{
-		$stmt = $this->conn->prepare($sql);
-		$stmt->execute($parameters);
 
-		return $stmt->rowCount();
-	}
-
-	/**
-	 * 删除一条数据
-	 * @param string $sql
-	 * @param array  $parameters
-	 * @return int  1 or 0 返回影响行数
-	 */
-	public function delete($sql, $parameters = array())
-	{
-		$stmt = $this->conn->prepare($sql);
-		$stmt->execute($parameters);
-
-		return $stmt->rowCount();
-	}
 }
