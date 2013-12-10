@@ -37,15 +37,21 @@ class MyCsv
 	}
 
 	/**
-	 * 导出CSV
+	 *  导出CSV
+	 * @param bool $change 是否需要转码
 	 * @return array
 	 */
-	public function import()
+	public function import($change = true)
 	{
 		$tmp = array();
 		while($data = fgetcsv($this->resource))
 		{
-			$tmp[] = $data;
+			$line = array();
+			foreach($data as $value)
+			{
+				$line[] = ($change) ? strtolower(iconv('gb2312', 'utf-8', $value)) : $value;
+			}
+			$tmp[] = $line;
 		}
 
 		return $tmp;

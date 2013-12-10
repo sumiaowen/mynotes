@@ -83,4 +83,13 @@ class Pdo_db
 
 		return $stmt->rowCount();
 	}
+
+	/**
+	 * 返回最后插入行的ID
+	 * @return mixed
+	 */
+	public function getLastInsertId()
+	{
+		return $this->conn->lastInsertId();
+	}
 }
