@@ -12,7 +12,7 @@ $params['dns']      = 'mysql:host=192.168.126.128;dbname=test';
 
 $params['username'] = 'root';
 
-$params['password'] = 'sumiaowen520';
+$params['password'] = 'test';
 
 $pdoObj = Pdo_db::get_instance($params);
 
@@ -26,19 +26,19 @@ $result = $pdoObj->query($sql, array(':keyword' => 'PHP%'));
 
 $sql    = "insert into test(keyword) values(:keyword)";
 
-$result = $pdoObj->insert($sql, array(':keyword' => 'PHP%'));
+$result = $pdoObj->execution($sql, array(':keyword' => 'PHP%'));
 
 //更新数据
 
 $sql    = "update test set keyword = :keyword where id=:id";
 
-$result = $pdoObj->update($sql, array(':keyword' => 'PHP%', ':id' => 11));
+$result = $pdoObj->execution($sql, array(':keyword' => 'PHP%', ':id' => 11));
 
 //删除数据
 
 $sql    = "delete from test where id=:id";
 
-$result = $pdoObj->delete($sql, array(':id' => 11));
+$result = $pdoObj->execution($sql, array(':id' => 11));
 
 更新中...
 
