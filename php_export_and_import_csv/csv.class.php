@@ -37,7 +37,7 @@ class csv
 
 	/**
 	 *  导出CSV
-	 * @param bool $change
+	 * @param bool $change 是否需要转码
 	 * @return array
 	 */
 	public function import($change = true)
