@@ -51,7 +51,7 @@ class MyFileCache
 
 	/**
 	 * @param string $cache_data 需要缓存的数据
-	 * @param  max   $cache_id   缓存ID，须唯一
+	 * @param  mixed $cache_id   缓存ID，须唯一
 	 * @return bool
 	 */
 	public function save_cache($cache_data, $cache_id)
@@ -64,6 +64,10 @@ class MyFileCache
 		return $this->_cache->save($cache_data, $cache_id);
 	}
 
+	/**
+	 * @param $cache_id
+	 * @return mixed
+	 */
 	public function get_cache($cache_id)
 	{
 		$result = $this->_cache->get($cache_id);
@@ -71,6 +75,9 @@ class MyFileCache
 		return $result;
 	}
 
+	/**
+	 * @return mixed
+	 */
 	public function delete_cache()
 	{
 		return $this->_cache->clean();
