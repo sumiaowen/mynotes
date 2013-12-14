@@ -10,7 +10,7 @@
 include 'discuzPost.php';
 
 $database             = array();
-$database['dns']      = 'mysql:host=localhost;dbname=ultrax';
+$database['dns']      = 'mysql:host=localhost;dbname=discuz';
 $database['username'] = 'root';
 $database['password'] = '123456';
 

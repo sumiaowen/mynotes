@@ -8,7 +8,7 @@
  * Time: 下午8:14
  * To change this template use File | Settings | File Templates.
  */
-include 'Pdo_db.php';
+include '../pdo_mysql_class/myPdo.php';
 
 class discuzPost
 {
@@ -24,7 +24,7 @@ class discuzPost
 	public function __construct($pdoParams, $fid, $title, $content, $author, $author_id, $displayorder)
 	{
 		//链接数据库
-		$this->pdo = Pdo_db::get_instance($pdoParams);
+		$this->pdo = myPdo::get_instance($pdoParams);
 
 		//设置帖子信息
 		$this->fid          = $fid;
@@ -85,26 +85,26 @@ class discuzPost
 				pre_forum_thread(fid,author,authorid,subject,dateline,lastpost,lastposter,displayorder)
 				values(:fid,:author,:authorid,:subject,:dateline,:lastpost,:lastposter,:displayorder)";
 
-		$result = $this->pdo->insert($sql, $data);
+		$result = $this->pdo->execution($sql, $data);
 
-		if($result == 1)
+		if($result)
 		{
-			$tid = $this->get_last_id();
+			return $this->pdo->getLastInsertId();
 		}
 
-		return $tid;
+		return false;
 	}
 
 	private function do_pre_forum_post_tableid()
 	{
 		$sql    = "INSERT INTO `pre_forum_post_tableid`(`pid`) VALUES(NULL)";
-		$result = $this->pdo->insert($sql);
-		if($result == 1)
+		$result = $this->pdo->execution($sql);
+		if($result)
 		{
-			$pid = $this->get_last_id();
+			return $this->pdo->getLastInsertId();
 		}
 
-		return $pid;
+		return false;
 	}
 
 	private function do_pre_forum_post($pid, $tid)
@@ -124,18 +124,18 @@ class discuzPost
 				pre_forum_post(pid,fid,tid,first,author,authorid,subject,dateline,message)
 				values(:pid,:fid,:tid,:first,:author,:authorid,:subject,:dateline,:message)";
 
-		$result = $this->pdo->insert($sql, $data);
+		$result = $this->pdo->execution($sql, $data);
 
-		return ($result == 1) ? true : false;
+		return ($result) ? true : false;
 	}
 
 	private function do_pre_forum_forum()
 	{
 		$sql = "UPDATE `pre_forum_forum` SET `threads`=threads+1,`posts`=posts+1,`todayposts`=todayposts+1 WHERE `fid`=:fid";
 
-		$result = $this->pdo->update($sql, array(':fid' => $this->fid));
+		$result = $this->pdo->execution($sql, array(':fid' => $this->fid));
 
-		return ($result == 1) ? true : false;
+		return ($result) ? true : false;
 	}
 
 	private function do_pre_forum_thread_moderate($tid)
@@ -147,25 +147,17 @@ class discuzPost
 
 		$sql = "insert into pre_forum_thread_moderate(tid,status,dateline) values(:tid,:status,:dateline)";
 
-		$result = $this->pdo->insert($sql, $data);
+		$result = $this->pdo->execution($sql, $data);
 
-		return ($result == 1) ? true : false;
+		return ($result) ? true : false;
 	}
 
 	private function do_pre_common_member_count()
 	{
 		$sql = "UPDATE `pre_common_member_count` SET `threads`=threads+1 WHERE `uid`=:uid";
 
-		$result = $this->pdo->update($sql, array(':uid' => $this->author_id));
+		$result = $this->pdo->execution($sql, array(':uid' => $this->author_id));
 
-		return ($result == 1) ? true : false;
-	}
-
-	private function get_last_id()
-	{
-		$sql    = "SELECT LAST_INSERT_ID()";
-		$result = $this->pdo->query($sql);
-
-		return $result[0]['LAST_INSERT_ID()'];
+		return ($result) ? true : false;
 	}
 }

@@ -7,7 +7,7 @@
  * Time: 下午9:12
  * To change this template use File | Settings | File Templates.
  */
-class Pdo_db
+class myPdo
 {
 	private $dns = null;
 	private $username = null;
@@ -26,7 +26,7 @@ class Pdo_db
 
 	private function __clone() { }
 
-	public function get_instance($params = array())
+	public static function get_instance($params = array())
 	{
 		if(!(self::$_instance instanceof self))
 		{
