@@ -24,17 +24,7 @@ class IndexController extends Yaf_Controller_Abstract {
 		$this->getView()->assign("name", $name);
 
 
-		$pdo = MyPdo::get_instance('default');
-		$sql = "select * from admin_520jixie order by id desc limit 10";
-
-		$result = $pdo->query($sql);
-
-		$fileName = Yaf_Registry::get('config')->cache->file->path.'test.csv';
-		$csv = new MyCsv($fileName ,'r');
-
-		echo '<pre>';
-		print_r($csv->import());
-		echo '</pre>';
+		
 
 		echo '<br>';
 		//4. render by Yaf, 如果这里返回FALSE, Yaf将不会调用自动视图引擎Render模板
