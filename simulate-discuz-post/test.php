@@ -21,6 +21,6 @@ $author       = 'admin';
 $author_id    = 1;
 $displayorder = 0;
 
-$discuz = new discuzPost($database, $fid, $title, $content, $author, $author_id, $displayorder);
+$discuz = new discuzPost($database);
 
-echo $discuz->post_posts();
+echo $discuz->post_posts($fid, $title, $content, $author, $author_id, $displayorder);

@@ -21,11 +21,14 @@ class discuzPost
 	private $current_time = null; //发帖时间
 	private $displayorder = null; //0:正常，-2:待审核
 
-	public function __construct($pdoParams, $fid, $title, $content, $author, $author_id, $displayorder)
+	public function __construct($pdoParams)
 	{
 		//链接数据库
 		$this->pdo = myPdo::get_instance($pdoParams);
+	}
 
+	public function post_posts($fid, $title, $content, $author, $author_id, $displayorder)
+	{
 		//设置帖子信息
 		$this->fid          = $fid;
 		$this->title        = $title;
@@ -33,10 +36,7 @@ class discuzPost
 		$this->author       = $author;
 		$this->author_id    = $author_id;
 		$this->displayorder = $displayorder;
-	}
 
-	public function post_posts()
-	{
 		$this->current_time = $_SERVER['REQUEST_TIME'];
 
 		$tid = $this->do_pre_forum_thread();

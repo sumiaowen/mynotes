@@ -1,1 +1,3 @@
 模拟discuz发帖
+
+考虑采用 curl_multi批处理进行采集...
