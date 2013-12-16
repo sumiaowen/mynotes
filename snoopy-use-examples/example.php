@@ -13,9 +13,9 @@ $snoopy = new Snoopy();
 
 //浏览器模拟
 $snoopy->agent                         = "(compatible; MSIE 4.01; MSN 2.5; AOL 4.0; Windows 98)";
-$snoopy->referer                       = '127.0.0.1';
+$snoopy->referer                       = '127.0.0.1';//伪造来源地址
 $snoopy->rawheaders["Pragma"]          = "no-cache";
-$snoopy->rawheaders["X_FORWARDED_FOR"] = "127.0.0.11";
+$snoopy->rawheaders["X_FORWARDED_FOR"] = "127.0.0.11";//伪造IP
 
 $url = 'http://127.0.0.1/test/github/snoopy-use-examples/doSubmit.php';
 
