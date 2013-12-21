@@ -13,5 +13,12 @@ class Test_TestController extends Yaf_Controller_Abstract
 	{
 		echo $_GET['id'];
 		return false;
+
+	}
+
+	public function AbcAction()
+	{
+		echo $_GET['id'];
+		return false;
 	}
 }
