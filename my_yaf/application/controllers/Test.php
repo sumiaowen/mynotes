@@ -13,17 +13,7 @@ class TestController extends Yaf_Controller_Abstract
 	public function indexAction()
 	{
 
-		$memcache = new MyMemcache();
-		$memcache->save_data('111', '111', 600);
-
-		if($memcache->get_data('111'))
-		{
-			echo 'cache' . $memcache->get_data('111');
-		}
-		else
-		{
-			echo 'no cache';
-		}
+		echo 111;
 
 		return false;
 	}
