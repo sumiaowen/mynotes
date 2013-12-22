@@ -11,7 +11,9 @@ class ChannelController extends Yaf_Controller_Abstract
 {
 	public function IndexAction()
 	{
-		echo 'module byte';
+		$bytenews = new Yaf_Config_Ini(APPLICATION_PATH . "/conf/bytenews.ini",'bytenews');
+
+		echo $bytenews->app->channel->id;
 
 		return false;
 	}
