@@ -1,3 +1,5 @@
 MAC系统下的PHPStorm 快捷键
 
-1、
+1、复制行：Command + D
+2、删除行：Command + delete
+3、保存：Command + s
