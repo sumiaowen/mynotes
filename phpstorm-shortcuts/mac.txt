@@ -1,5 +1,37 @@
 MAC系统下的PHPStorm 快捷键
 
-1、复制行：Command + D
-2、删除行：Command + delete
-3、保存：Command + s
+行复制：Command + D
+
+行剪切：Command + X
+
+行移动（上、下）：Command + shift + up(down)
+
+块移动（上、下）：Option + shift + up(down)
+
+删除行：Command + delete
+
+保存：Command + S
+
+查找：Command + F
+
+替换：Command + R
+
+单词大小写转换：Command + shift + U
+
+代码格式化：Command + option + L
+
+删除 光标至单词开头：option + delete
+
+删除 光标至单词末尾：option + fn + delete
+
+光标跳至下一行：shift + enter
+
+跳到变量申明处：Command + B
+
+围绕包裹代码：Command + option + T
+
+单行注释：Command + /
+
+块注释：Command + option + /
+
+显示函数参数信息：Command + P
